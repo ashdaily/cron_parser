@@ -1,11 +1,10 @@
-### How to build & run CLI Cron Parser
+## Project Cron Parser
 
 The solution is written in python3 utilises docker & docker-compose. 
 
----
 
 ### Build the solution with docker
-Requirement : Docker should be installed.
+Requirement : Docker required system-wide.
 
 ```bash
 docker-compose build
