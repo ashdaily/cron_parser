@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  cron-parser:
+    build: .
+    environment:
+      - LOG_LEVEL=DEBUG
+    volumes:
+      - .:/deliveroo
+    working_dir: /deliveroo
+    entrypoint: ["python", "src/main.py"]
+    command: ["*/15", "0", "1,15", "*", "1-5", "/usr/bin/find"]
+
+  cron-parser-test:
+    build: .
+    environment:
+      - LOG_LEVEL=INFO
+      - PYTHONPATH=/deliveroo/src
+    volumes:
+      - .:/deliveroo
+    working_dir: /deliveroo
+    entrypoint: [ "python", "-m", "unittest", "discover", "tests" ]
