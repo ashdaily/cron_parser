@@ -52,7 +52,7 @@ class SingleValueStrategy(ExpandStrategy):
         return {value}
 
 
-class LastDayOfMonthStrategy(ExpandStrategy):
+class LastDayOfMonthOrWeekStrategy(ExpandStrategy):
     def expand(self, part, min_val, max_val):
         return {max_val}
 
