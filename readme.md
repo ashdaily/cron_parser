@@ -185,8 +185,7 @@ Some more complicated once like, every day, once in every two hours until 12pm, 
 
 ---
 
-### The improvements 
-Due to limited time I couldn't work on the following:
+### Future improvements
 - Invalid syntax for cron_string input, in general, is not handled well.
 - Symbols that are invalid are not handled gracefully.
 - Not very focused on handling errors and validations, does very basic validation around max and min value
