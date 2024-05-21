@@ -9,7 +9,7 @@ Basic Format
 * * * * * command_to_be_executed
 - - - - -
 | | | | |
-| | | | +---- Day of the week (0 - 7) (Sunday=0 or 7, or use names: sun, mon, tue, wed, thu, fri, sat)
+| | | | +---- Day of the week (1 - 7) (Sunday=1 or 7, or use names: sun, mon, tue, wed, thu, fri, sat)
 | | | +------ Month (1 - 12) or (jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec)
 | | +-------- Day of the month (1 - 31)
 | +---------- Hour (0 - 23)
