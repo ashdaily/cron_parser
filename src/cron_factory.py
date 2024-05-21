@@ -1,6 +1,6 @@
 from cron_fields import (
     MinuteField, HourField, DayOfMonthField,
-    MonthField, DayOfWeekField, CommandField)
+    MonthField, DayOfWeekField, CommandField, YearField)
 
 
 class CronFieldFactory:
@@ -16,6 +16,8 @@ class CronFieldFactory:
             return MonthField(field_str)
         elif name == "day of week":
             return DayOfWeekField(field_str)
+        elif name == "year":
+            return YearField(field_str)
         elif name == "command":
             return CommandField(field_str)
         else:
