@@ -1,10 +1,10 @@
 import argparse
-import os
 from rich.console import Console
 from rich.table import Table, Column
 from rich.panel import Panel
 from cron_parser import CronParser
 from logging_config import logger
+
 
 PROGRAM_DESCRIPTION = """
 This program parses a cron string and expands each field
@@ -23,6 +23,7 @@ month             1 2 3 4 5 6 7 8 9 10 11 12
 day of week       1 2 3 4 5
 command           /usr/bin/find
 """
+
 
 def main():
     logger.info("Cron parser started...")
@@ -51,6 +52,7 @@ def main():
     console.print(panel)
 
     logger.info("Cron parser executed !")
+
 
 if __name__ == "__main__":
     main()
