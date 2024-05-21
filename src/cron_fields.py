@@ -1,5 +1,5 @@
 from logging_config import logger
-from strategies import RangeStepStrategy, RangeStrategy, AsteriskStrategy, LastDayOfMonthStrategy, \
+from strategies import RangeStepStrategy, RangeStrategy, AsteriskStrategy, LastDayOfMonthOrWeekStrategy, \
     NearestWeekdayStrategy, NthDayOfWeekStrategy, SingleValueStrategy
 
 
@@ -29,7 +29,7 @@ class CronField:
             elif part == '*':
                 strategy = AsteriskStrategy()
             elif part == 'l' and self.name == "day of month":
-                strategy = LastDayOfMonthStrategy()
+                strategy = LastDayOfMonthOrWeekStrategy()
             elif part.endswith('w') and self.name == "day of month":
                 strategy = NearestWeekdayStrategy()
             elif '#' in part and self.name == "day of week":
@@ -63,8 +63,28 @@ class MonthField(CronField):
 
 
 class DayOfWeekField(CronField):
+    MAP = {
+        "sun": 1,
+        "mon": 2,
+        "tue": 3,
+        "wed": 4,
+        "thu": 5,
+        "fri": 6,
+        "sat": 7,
+    }
+
     def __init__(self, field_str):
         super().__init__("day of week", field_str, 1, 7)
+
+        # handle mon-fri type of syntax as well
+        for k, v in self.MAP.items():
+            if k in field_str:
+                self.field_str = self.field_str.replace(k, str(v))
+
+
+class YearField(CronField):
+    def __init__(self, field_str):
+        super().__init__("year", field_str, 1970, 3000)
 
 
 class CommandField:
