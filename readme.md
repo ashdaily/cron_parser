@@ -113,7 +113,7 @@ Requirement : python3.7 or above and pip3
 
 ### Solution Intro
 ```md
-deliveroo/
+cron_parser/
 │
 ├── Dockerfile
 ├── docker-compose.yml # composes cli app (cron-parser) & the unit tests (cron-parser)

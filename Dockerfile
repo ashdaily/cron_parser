@@ -1,11 +1,11 @@
 FROM python:3.11-slim
 
-WORKDIR /deliveroo
+WORKDIR /cron_parser
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
-ENV PYTHONPATH=/deliveroo/src
+ENV PYTHONPATH=/cron_parser/src
 ENV LOG_LEVEL=DEBUG
 
 # Default command to run

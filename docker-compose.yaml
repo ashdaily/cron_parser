@@ -6,8 +6,8 @@ services:
     environment:
       - LOG_LEVEL=DEBUG
     volumes:
-      - .:/deliveroo
-    working_dir: /deliveroo
+      - .:/cron_parser
+    working_dir: /cron_parser
     entrypoint: ["python", "src/main.py"]
     command: ["*/15", "0", "1,15", "*", "1-5", "/usr/bin/find"]
 
@@ -15,8 +15,8 @@ services:
     build: .
     environment:
       - LOG_LEVEL=INFO
-      - PYTHONPATH=/deliveroo/src
+      - PYTHONPATH=/cron_parser/src
     volumes:
-      - .:/deliveroo
-    working_dir: /deliveroo
+      - .:/cron_parser
+    working_dir: /cron_parser
     entrypoint: [ "python", "-m", "unittest", "discover", "tests" ]
