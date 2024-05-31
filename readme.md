@@ -24,7 +24,7 @@ docker-compose run cron-parser "*/7 0 1,15 * 1-5 /usr/bin/find"
 Example Result:
 ```fish
 
-Creating deliveroo_cron-parser_run ... done
+Creating cron-parser_run ... done
 [03:36:11] INFO     Cron parser started...                                                                   main.py:28
 ╭─ Parsed Cron Fields ──────────────────────────────────╮
 │                 Cron Parsing Results:                 │
@@ -56,7 +56,7 @@ LOG_LEVEL=INFO # change this to DEBUG to see debug logs
 
 Try the parser again & you should see something like this:
 ```fish
-Creating deliveroo_cron-parser_run ... done
+Creating cron-parser_run ... done
 [03:42:19] INFO     Cron parser started...                                                                   main.py:28
            DEBUG    Initializing CronParser, received cron_str: "*/7 0 1,15 * 1-5 /usr/bin/find"       cron_parser.py:7
            DEBUG    Initializing minute field with string: */7                                        cron_fields.py:12
